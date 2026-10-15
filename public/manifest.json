@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Superfocus",
+  "version": "0.1.0",
+  "description": "Block distracting sites during selected Google Calendar events.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnXKZR2pvwvm1khZO/Oa/ricyQK1BNrpvjRL+BFXBKxEuGyRklGJDCbpTnjYkGgf8loLfMqZ4lQYCugyKbUWVtvpUQYmOCcssG0c8DEHyAxTG9jPtuiw9XNAPise4L/d7+aCV5irjweU5TIcRFnuwMAQLZAtJ7LFhF8flKnfIYKo+ceggjMSdZMCiTRplvwEbClJUA9HgLAMi8ttwfymRyObEhYVZ5UHE3jfzJkvwDUlT5hx5hGsgUeJBhufsoaeJLlY2RYUBt9Ym1yx2cYucAyjImzs+WKG0VN/yy3OyNZP5Q5ATsFh7M+dzWqC1vUvLEMVOFr6lcI4adZHSUxXD4QIDAQAB",
+  "permissions": [
+    "alarms",
+    "declarativeNetRequest",
+    "identity",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "oauth2": {
+    "client_id": "REPLACE_WITH_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar.readonly"]
+  },
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Superfocus"
+  },
+  "options_page": "index.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html", "assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
